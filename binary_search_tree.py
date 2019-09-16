@@ -1,3 +1,12 @@
+''' Following are implemeted:
+1. Queue class
+2. BST insert
+3. BST Search
+4. BST delete
+5. BST in order traversal
+6. BST level order traversal
+7. Find max node
+'''
 class Queue:
     def __init__(self):
         self.data = []
@@ -51,12 +60,9 @@ def find_max(root):
         return root
     return find_max(root.right)
 
-
-
 def level_order(root):
     if root is None:
-        return
-    
+        return    
     queue = Queue()
     queue.EnQueue(root)
     while len(queue.data) > 0:
@@ -75,14 +81,16 @@ def delete(root, key):
     elif key > root.data:
         root.right = delete(root.right, key)
     else:
+        # Left node or both are empty
         if root.left is None:
             temp = root.right
             root = None
             return temp
-        elif root.right is None:
+        elif root.right is None: # Right node is empty
             temp = root.left
             root = None
             return temp
+        # both left & right nodes exist
         temp = find_max(root.left)
         root.data = temp.data
         delete(root.left, temp.data)

@@ -22,7 +22,7 @@ def gen_permutations_with_no_memory(lst):
         for i in range(len(lst)):
             cur_val = lst[i]
             remaining_lst = lst[:i] + lst[i+1:]
-            for p in gen_permutations(remaining_lst):
+            for p in gen_permutations_with_no_memory(remaining_lst):
                 yield [cur_val]+p
 
 

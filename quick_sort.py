@@ -19,6 +19,10 @@ def find_pivot(arr, start, end):
         return right
 
 arr = [4, 7, 9, 3, 2, 6, 1]
+print('Input = {}'.format(arr))
+quick_sort(arr, 0, len(arr) - 1)
+print('Sorted output = {}'.format(arr))
+
 arr = [64, 34, 25, 12, 22, 11, 90]
 print('Input = {}'.format(arr))
 quick_sort(arr, 0, len(arr) - 1)
